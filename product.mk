@@ -5,7 +5,7 @@ include vendor/extra/apps/GoogleApps.mk
 include vendor/extra/google-fonts/GoogleFonts.mk
 
 # GMS
-include vendor/gapps/arm64/arm64-vendor.mk
+$(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
 
 ## ih8sn
 $(call inherit-product-if-exists, ih8sn/product.mk)
