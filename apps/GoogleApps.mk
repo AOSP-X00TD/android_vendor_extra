@@ -1,5 +1,5 @@
 ## Packages
 PRODUCT_PACKAGES += \
-    FlipendoPrebuilt \
+    Flipendo \
     SoundPickerPrebuilt \
     TurboPrebuilt
