@@ -12,6 +12,3 @@ $(call inherit-product-if-exists, ih8sn/product.mk)
 
 ## Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/extra/overlay
-
-## Bootanimation
-TARGET_BOOTANIMATION_HALF_RES := true
