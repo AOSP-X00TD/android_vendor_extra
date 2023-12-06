@@ -12,5 +12,10 @@ endif
 ## ih8sn
 $(call inherit-product-if-exists, ih8sn/product.mk)
 
+# Oplus cam
+ifeq ($(WITH_OPLUSCAM),true)
+$(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
+endif
+
 ## Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/extra/overlay
