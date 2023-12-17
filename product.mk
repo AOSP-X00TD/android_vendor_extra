@@ -1,21 +1,20 @@
+EXTRA_PATH := vendor/extra
+
 ## Pixel Apps
-#include vendor/extra/apps/GoogleApps.mk
+$(call inherit-product-if-exists, $(EXTRA_PATH)/apps/GoogleApps.mk)
 
 ## Google Fonts
-#include vendor/extra/google-fonts/GoogleFonts.mk
+$(call inherit-product-if-exists, $(EXTRA_PATH)/google-fonts/GoogleFonts.mk)
 
 # GMS
-#ifeq ($(WITH_GMS),true)
-#$(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
-#endif
+ifeq ($(WITH_GMS),true)
+$(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
+endif
 
-## ih8sn
-$(call inherit-product-if-exists, ih8sn/product.mk)
-
-# Oplus cam
-#ifeq ($(WITH_OPLUSCAM),true)
-#$(call inherit-product-if-exists, vendor/oplus/camera/opluscamera.mk)
-#endif
+# ih8sn
+ifneq (,$(wildcard vendor/ih8sn))
+$(call inherit-product-if-exists, $(EXTRA_PATH)/ih8sn/ih8sn.mk)
+endif
 
 ## Overlays
-#PRODUCT_PACKAGE_OVERLAYS += vendor/extra/overlay
+PRODUCT_PACKAGE_OVERLAYS += $(EXTRA_PATH)/overlay
